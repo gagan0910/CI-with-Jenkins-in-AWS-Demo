@@ -4,7 +4,7 @@ pipeline {
             PROJECT_ID = 'halogen-emblem-261509'
             CLUSTER_NAME = 'k8s-cluster-1'
             LOCATION = 'europe-west4-a'
-            CREDENTIALS_ID = 'kubernetes'
+            CREDENTIALS_ID = 'b1454f0d-e3ba-4f09-85e7-4b07d2985823'
         }
     
     stages {
