@@ -17,7 +17,7 @@ spec:
   spec:
    containers:
    - name: myapp
-     image: gagan0910/tomcat01:tagversion
+     image: gcr.io/halogen-emblem-261509/gagan0910/tomcat01:tagversion
      ports:
      - containerPort: 8080
      
