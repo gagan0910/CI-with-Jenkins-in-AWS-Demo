@@ -28,16 +28,23 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
+                    /* commented docker hub image building
                     myimage = docker.build("gagan0910/tomcat01:${env.BUILD_ID}")
+                    */
+                    myimage = docker.build("gcr.io/halogen-emblem-261509/gagan0910/tomcat01:${env.BUILD_ID}")
                 }
             }
         }
         stage('Push Docker Image') {
             steps {
                 script {
+                    /* commented docker hub registry push
                     docker.withRegistry('https://registry.hub.docker.com', 'b1454f0d-e3ba-4f09-85e7-4b07d2985823'){
                     myimage.push("${env.BUILD_ID}")
                   }
+                  */
+                    docker.withRegistry('https://gcr.io', 'gcr'){
+                    myimage.push("${env.BUILD_ID}")
                 }
             }
         }
